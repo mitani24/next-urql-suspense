@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { PokemonList } from "../components/PokemonList";
 
 const Home: NextPage = () => {
   return (
@@ -10,9 +11,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <PokemonList />
       </main>
     </div>
   );

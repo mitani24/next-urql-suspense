@@ -1,0 +1,10 @@
+overwrite: true
+schema: "https://graphql-pokemon2.vercel.app/"
+documents: "src/**/*.graphql"
+generates:
+  src/lib/generated/graphql-types.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-urql"
+      - "named-operations-object"

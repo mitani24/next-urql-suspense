@@ -5,7 +5,7 @@ import { client } from "../lib/urql-client";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider value={client}>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </Provider>
   );
 }
