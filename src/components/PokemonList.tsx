@@ -7,11 +7,7 @@ export const PokemonList = () => {
     },
   });
 
-  const { fetching, data } = result;
-
-  if (fetching) {
-    return <p>Loading...</p>;
-  }
+  const { data } = result;
 
   return (
     <ul>

@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { Suspense } from "react";
+import { ClientOnly } from "../components/ClientOnly";
 import { PokemonList } from "../components/PokemonList";
 
 const Home: NextPage = () => {
@@ -11,7 +13,20 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <PokemonList />
+        <div>
+          <h2>Server-side suspense</h2>
+          <Suspense fallback={<p>Loading...</p>}>
+            <PokemonList />
+          </Suspense>
+        </div>
+        <div>
+          <h2>Client-side suspense</h2>
+          <ClientOnly>
+            <Suspense fallback={<p>Loading...</p>}>
+              <PokemonList />
+            </Suspense>
+          </ClientOnly>
+        </div>
       </main>
     </div>
   );
